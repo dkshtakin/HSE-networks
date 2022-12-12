@@ -28,7 +28,7 @@ def is_mtu_ok(host: str, mtu: int, c: int) -> bool:
     return not bool(cmd_result.returncode)
 
 def find_mtu(host: str, c: int) -> int:
-    mtus = [*range(36, 1473)]
+    mtus = [*range(0, 1473)]
     index = bisect_right(KeyWrap(mtus, key=lambda x: not is_mtu_ok(host, x, c)), 0)
     return mtus[index - 1]
 
