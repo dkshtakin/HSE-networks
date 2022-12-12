@@ -33,7 +33,7 @@ def find_mtu(host: str, c: int) -> int:
     return mtus[index - 1]
 
 def is_available(host: str) -> bool:
-    return is_mtu_ok(host, 56, 1)
+    return is_mtu_ok(host, 0, 1)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog = 'python3 mtu.py')
